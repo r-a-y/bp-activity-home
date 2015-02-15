@@ -131,6 +131,7 @@ class BP_Home {
 	public function reset_activity_scope_cookie() {
 		if ( ! empty( $_COOKIE['bp-activity-scope'] ) && self::SCOPE_NAME === $_COOKIE['bp-activity-scope'] ) {
 			@setcookie( 'bp-activity-scope', 'all', 0, '/' );
+			$_COOKIE['bp-activity-scope'] = 'all';
 		}
 	}
 
