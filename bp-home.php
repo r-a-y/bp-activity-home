@@ -91,7 +91,11 @@ class BP_Home {
 	/**
 	 * Override some activity default / AJAX parameters if we're on the Sitewide Activity page.
 	 */
-	public function set_home_scope() {
+	public function set_home_scope( $retval = '' ) {
+		if ( ! empty( $retval ) ) {
+			return $retval;
+		}
+
 		// reset cookie for logged-out users
 		if ( ! is_user_logged_in() ) {
 			$this->reset_activity_scope_cookie();
